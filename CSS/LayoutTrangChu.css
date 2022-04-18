@@ -1,0 +1,112 @@
+﻿#icon-login {
+            border-radius: 60px;
+        }
+
+        #lblDangNhap {
+            text-decoration: none;
+            color: black;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        #lblDangNhap:hover {
+            color: blue;
+        }
+
+        #btnDangNhap {
+            font-weight: bold;
+        }
+
+        #btnDangNhap:hover {
+            text-decoration: none;
+        }
+
+        #nav {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            width: 90%;
+        }
+
+        li {
+            color: grey;
+            font-weight: bold;
+            font-family: Arial;
+        }
+
+        li:hover {
+            color: blue;
+            border-bottom: 3px solid purple;
+        }
+
+        #nav ul li a {
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .img {
+            margin: 5px;
+        }
+        
+        #btnaside1
+        {
+            border-radius:75px 0px 0px 75px;
+            width:32%;
+            height:30px;
+            color:white;
+            background-color: red;
+            float:left;
+            border: 1px solid red;
+        }
+
+        #btnaside2
+        {
+            width:32%;
+            height:30px;
+            color:black;
+            background-color: #f2f2f2;
+            float:left;
+            border: 1px solid #f2f2f2;
+        }
+
+        #btnaside3
+        {
+            border-radius:0px 75px 75px 0px;
+            width:32%;
+            height:30px;
+            color:black;
+            background-color: #f2f2f2;
+            float:left;
+            border: 1px solid #f2f2f2;
+        }
+
+        #btnaside2:hover, #btnaside3:hover
+        {
+            color:white;
+            background-color: red;
+            border: 1px solid red;
+        }
+
+        .top1
+        {
+            text-align:center;
+            vertical-align:middle;
+            position:absolute;
+            width:20px;
+            height:20px;
+            color:white;
+            background-color:red;
+            margin-top:-20px;
+            margin-left:0px;
+        }
+
+        #tblFooter tr td a:hover
+        {
+            background-color:red;
+            font-weight:bold;
+        }

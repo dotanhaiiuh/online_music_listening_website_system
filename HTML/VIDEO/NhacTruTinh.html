@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Zing MP3 - Nghe tải nhạc chất lượng cao trên desktop, mobile và TV</title>
+    <link rel="shortcut icon" type="image/png" href="../../IMAGES/zing-mp3-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../../BOOTSTRAP/3/css/bootstrap.css">
+    <!-- jQuery JS-->
+    <script src="../../JQUERY/4/jquery.min.js"></script>
+    <script src="../../JQUERY/4/popper.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script type="text/javascript" src="../../BOOTSTRAP/3/js/bootstrap.min.js"></script>
+    <style>
+        @import url("../../CSS/LayoutTrangChu.css");
+        @import url("../../CSS/DropDownHover.css");
+    </style>
+    <script src="../../JAVASCRIPT/Validata.js"></script>
+    <script>
+        function anKhiChay1(id)
+        {
+            document.getElementById(id).style.display = "none";
+            document.getElementById(id).style.position = "absolute";
+            document.getElementById(id).style.float = "left";
+            document.getElementById(id).style.marginTop = "-107px";
+            document.getElementById(id).style.marginLeft = "91px";
+        }
+        function anPlay(idPlay,idHinh)
+        {
+            document.getElementById(idPlay).style.display = "none";
+            document.getElementById(idHinh).style.opacity = "1";
+        }
+        function hienPlay(idPlay, idHinh)
+        {
+            document.getElementById(idPlay).style.display = "block";
+            document.getElementById(idHinh).style.opacity = "0.6";
+        }
+        function chayNhac(filePath) {
+            var s = "<audio controls style='position: fixed; bottom: 0%; width:100%' autoplay>"
+            s += "<source src=";
+            s += filePath;
+            s += " type='audio/mp3' />";
+            s += "</audio>";
+            document.getElementById("chayNhac").innerHTML = s;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="col-md-12">
+                <tr>
+                    <td>
+                        <img src="../../IMAGES/zing-mp3-logo.png" width="250px" height="70px" />
+                    </td>
+                    <td>
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="image" src="../../IMAGES/search-icon.jpg" width="70px" height="70px" />
+                                    </td>
+                                    <td>
+                                        <input id="txtSearch" type="text" class="form-control" style="border: 1px solid black" size="55" placeholder="Nhập tên bài hát, ca sĩ hoặc video…" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                    <td>
+                        <table width="190px">
+                            <tr>
+                                <td>
+                                    <img id="icon-login" src="../../IMAGES/login-user-icon.png" width="50px" height="50px" />
+                                </td>
+                                <td>
+                                    <button id="btnDangNhap" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModalDN">Đăng nhập</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row" id="nav">
+            <div class="col-md-12">
+                <nav class="nav navbar-default">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li><a href="../TrangChu/index.html">TRANG CHỦ</a></li>
+                        <li class="dropdown">
+                            <a href="../ZINGCHART/ZINGCHART.html">#ZINGCHART</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>#ZINGCHART</strong></a></td>
+                                        <td><a href="#"><strong>TUẦN</strong></a></td>
+                                        <td><a href="#"><strong>US-UK CHART</strong></a></td>
+                                        <td><a href="#"><strong>KPOP CHART</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Bài Hát</a></td>
+                                        <td><a href="#">Bài Hát</a></td>
+                                        <td><a href="#">Bài Hát</a></td>
+                                        <td><a href="#">Bài Hát</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">MV</a></td>
+                                        <td><a href="#">MV</a></td>
+                                        <td><a href="#">MV</a></td>
+                                        <td><a href="#">MV</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../TOP100/Top100.html">TOP 100</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>VIỆT NAM</strong></a></td>
+                                        <td><a href="#"><strong>ÂU MỸ</strong></a></td>
+                                        <td><a href="#"><strong>CHÂU Á</strong></a></td>
+                                        <td><a href="#"><strong>HÒA TẤU</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trẻ</a></td>
+                                        <td><a href="#">POP</a></td>
+                                        <td><a href="#">Hàn Quốc</a></td>
+                                        <td><a href="#">Classical</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trữ Tình</a></td>
+                                        <td><a href="#">Rock</a></td>
+                                        <td><a href="#">Nhật Bản</a></td>
+                                        <td><a href="#">Piano</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Piano</a></td>
+                                        <td><a href="#">Rap / Hip Hop</a></td>
+                                        <td><a href="#">Hoa Ngữ</a></td>
+                                        <td><a href="#">Guitar</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Cách Mạng</a></td>
+                                        <td><a href="#">Country</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Violin</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rap / Hip Hop Việt</a></td>
+                                        <td><a href="#">Electronic / Dance</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Cello</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rock Việt</a></td>
+                                        <td><a href="#">R&B / Soul</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Saxophone</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Dance Việt</a></td>
+                                        <td><a href="#">Audiophile</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Nhạc Cụ Khác</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../ChuDe/ChuDe.html">CHỦ ĐỀ</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>ĐỀ XUẤT</strong></a></td>
+                                        <td><a href="#"><strong>THỂ LOẠI</strong></a></td>
+                                        <td><a href="#"><strong>TÂM TRẠNG</strong></a></td>
+                                        <td><a href="#"><strong>HOẠT ĐỘNG</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Hot</a></td>
+                                        <td><a href="#">EDM</a></td>
+                                        <td><a href="#">Những Ngày Mưa</a></td>
+                                        <td><a href="#">Làm Việc</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Những Bài HITs..</a></td>
+                                        <td><a href="#">Acoustic</a></td>
+                                        <td><a href="#">Tình Yêu</a></td>
+                                        <td><a href="#">Yoga</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Việt Bất Hũ</a></td>
+                                        <td><a href="#">Indie</a></td>
+                                        <td><a href="#">Buồn</a></td>
+                                        <td><a href="#">Cà Phê</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Bất Hũ Âu ..</a></td>
+                                        <td><a href="#">Nhạc Không Lời</a></td>
+                                        <td><a href="#">Thư Giãn</a></td>
+                                        <td><a href="#">Cuối Tuần</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">K-POP HITs</a></td>
+                                        <td><a href="../ChuDe/TruTinhBolero.html">Trữ Tình & Bolero</a></td>
+                                        <td><a href="#">Động Lực</a></td>
+                                        <td><a href="#">Tiệc Tùng</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="../ChuDe/NhacThuyNga.html">Nhạc Thúy Nga</a></td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Du Lịch</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Video.html" style="border-bottom:3px solid purple;">VIDEO</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>VIỆT NAM</strong></a></td>
+                                        <td><a href="#"><strong>ÂU MỸ</strong></a></td>
+                                        <td><a href="#"><strong>CHÂU Á</strong></a></td>
+                                        <td><a href="#"><strong>HÒA TẤU</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trẻ</a></td>
+                                        <td><a href="#">POP</a></td>
+                                        <td><a href="#">Hàn Quốc</a></td>
+                                        <td><a href="#">Classical</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trữ Tình</a></td>
+                                        <td><a href="#">Rock</a></td>
+                                        <td><a href="#">Nhật Bản</a></td>
+                                        <td><a href="#">Piano</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Dance Việt</a></td>
+                                        <td><a href="#">Rap / Hip Hop</a></td>
+                                        <td><a href="#">Hoa Ngữ</a></td>
+                                        <td><a href="#">Guitar</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rock Việt</a></td>
+                                        <td><a href="#">Country</a></td>
+                                        <td><a href="#">Thái Lan</a></td>
+                                        <td><a href="#">Violin</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rap / Hip Hop Việt</a></td>
+                                        <td><a href="#">Eletronic / Dance</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Cello</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trịnh</a></td>
+                                        <td><a href="#">R&B / Soul</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Saxophone</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Thiếu Nhi</a></td>
+                                        <td><a href="#">Audiophile</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Nhạc Cụ Dân Tộc</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../Album/Album.html">ALBUM</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>VIỆT NAM</strong></a></td>
+                                        <td><a href="#"><strong>ÂU MỸ</strong></a></td>
+                                        <td><a href="#"><strong>CHÂU Á</strong></a></td>
+                                        <td><a href="#"><strong>HÒA TẤU</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trẻ</a></td>
+                                        <td><a href="#">POP</a></td>
+                                        <td><a href="#">Hàn Quốc</a></td>
+                                        <td><a href="#">Classical</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="../Album/NhacTruTinh.html">Nhạc Trữ Tình</a></td>
+                                        <td><a href="#">Rock</a></td>
+                                        <td><a href="#">Nhật Bản</a></td>
+                                        <td><a href="#">Piano</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Dance Việt</a></td>
+                                        <td><a href="#">Rap / Hip Hop</a></td>
+                                        <td><a href="#">Hoa Ngữ</a></td>
+                                        <td><a href="#">Guitar</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rock Việt</a></td>
+                                        <td><a href="#">Country</a></td>
+                                        <td><a href="#">Thái Lan</a></td>
+                                        <td><a href="#">Violin</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rap / Hip Hop Việt</a></td>
+                                        <td><a href="#">Eletronic / Dance</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Cello</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trịnh</a></td>
+                                        <td><a href="#">R&B / Soul</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Saxophone</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Thiếu Nhi</a></td>
+                                        <td><a href="#">Audiophile</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Nhạc Cụ Dân Tộc</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../NgheSi/NgheSi.html">NGHỆ SĨ</a>
+                            <div class="dropdown-content" style="width:120px;font-weight:normal;line-height:40px;">
+                                <a href="#" style="padding:15px;">Việt Nam</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Âu Mỹ</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Hàn Quốc</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Nhật Bản</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Hoa Ngữ</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Hòa Tấu</a>
+                            </div>
+                        </li>
+                        <li><a href="../NhacCaNhan/NhacCaNhan.html">NHẠC CÁ NHÂN</a></li>
+                        <li><a href="#">VIP</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-info"><a href="#" style="text-decoration:none">VIỆT NAM &gt;</a></h3>
+                <table>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-1" class="img" src="../../IMAGES/img-120.jpg" width="217px" height="150px" title="Mưa Chiều Miền Trung" onmouseover="hienPlay('img-play-1','img-1')" onmouseout="anPlay('img-play-1','img-1')" />
+                            <img id="img-play-1" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Mưa Chiều Miền Trung" onload="anKhiChay1('img-play-1')" onmouseover="hienPlay('img-play-1','img-1')" onmouseout="anPlay('img-play-1','img-1')" />
+                            <a href="#">Mưa Chiều Miền Trung</a>
+                            <p>Dương Hồng Loan</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-2" class="img" src="../../IMAGES/img-121.jpg" width="217px" height="150px" title="Cát Bụi Cuộc Đời" onmouseover="hienPlay('img-play-2','img-2')" onmouseout="anPlay('img-play-2','img-2')" />
+                            <img id="img-play-2" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Cát Bụi Cuộc Đời" onload="anKhiChay1('img-play-2')" onmouseover="hienPlay('img-play-2','img-2')" onmouseout="anPlay('img-play-2','img-2')" />
+                            <a href="#">Cát Bụi Cuộc Đời</a>
+                            <p>Trường Sơn</p>
+                        <td align="center">
+                            <img id="img-3" class="img" src="../../IMAGES/img-122.jpg" width="217px" height="150px" title="Duyên Con Gái" onmouseover="hienPlay('img-play-3','img-3')" onmouseout="anPlay('img-play-3','img-3')" />
+                            <img id="img-play-3" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Duyên Con Gái" onload="anKhiChay1('img-play-3')" onmouseover="hienPlay('img-play-3','img-3')" onmouseout="anPlay('img-play-3','img-3')" />
+                            <a href="#">Duyên Con Gái</a>
+                            <p>Mỹ Anh</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-4" class="img" src="../../IMAGES/img-123.jpg" width="217px" height="150px" title="Người Đã Như Mơ" onmouseover="hienPlay('img-play-4','img-4')" onmouseout="anPlay('img-play-4','img-4')" />
+                            <img id="img-play-4" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Người Đã Như Mơ" onload="anKhiChay1('img-play-4')" onmouseover="hienPlay('img-play-4','img-4')" onmouseout="anPlay('img-play-4','img-4')" />
+                            <a href="#">Người Đã Như Mơ</a>
+                            <p>Mỹ Hạnh</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-5" class="img" src="../../IMAGES/img-124.jpg" width="217px" height="150px" title="Nụ Thương Sen Hồng" onmouseover="hienPlay('img-play-5','img-5')" onmouseout="anPlay('img-play-5','img-5')" onclick="chayNhac('../../MUSIC/ChutKyNiemBuon-NhuQuynh.mp3')" />
+                            <img id="img-play-5" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Nụ Thương Sen Hồng" onload="anKhiChay1('img-play-5')" onmouseover="hienPlay('img-play-5','img-5')" onmouseout="anPlay('img-play-5','img-5')" onclick="chayNhac('../../MUSIC/ChutKyNiemBuon-NhuQuynh.mp3')" />
+                            <a href="#">Nụ Thương Sen Hồng</a>
+                            <p>Vân Khánh</p>
+                        </td>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-6" class="img" src="../../IMAGES/img-125.jpg" width="217px" height="150px" title="Em Không Còn Thương" onmouseover="hienPlay('img-play-6','img-6')" onmouseout="anPlay('img-play-6','img-6')" />
+                            <img id="img-play-6" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Em Không Còn Thương" onload="anKhiChay1('img-play-6')" onmouseover="hienPlay('img-play-6','img-6')" onmouseout="anPlay('img-play-6','img-6')" />
+                            <a href="#">Em Không Còn Thương</a>
+                            <p>Ngọc Hân</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-7" class="img" src="../../IMAGES/img-126.jpg" width="217px" height="150px" title="Dòng Đời" onmouseover="hienPlay('img-play-7','img-7')" onmouseout="anPlay('img-play-7','img-7')" />
+                            <img id="img-play-7" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Dòng Đời" onload="anKhiChay1('img-play-7')" onmouseover="hienPlay('img-play-7','img-7')" onmouseout="anPlay('img-play-7','img-7')" />
+                            <a href="#">Dòng Đời</a>
+                            <p>Thùy Dương</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-8" class="img" src="../../IMAGES/img-127.jpg" width="217px" height="150px" title="Giọng Ca Dĩ Vãng" onmouseover="hienPlay('img-play-8','img-8')" onmouseout="anPlay('img-play-8','img-8')" />
+                            <img id="img-play-8" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Giọng Ca Dĩ Vãng" onload="anKhiChay1('img-play-8')" onmouseover="hienPlay('img-play-8','img-8')" onmouseout="anPlay('img-play-8','img-8')" />
+                            <a href="#">Giọng Ca Dĩ Vãng</a>
+                            <p>Vi Châu</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-9" class="img" src="../../IMAGES/img-128.jpg" width="217px" height="150px" title="Đường Về Hai Thôn" onmouseover="hienPlay('img-play-9','img-9')" onmouseout="anPlay('img-play-9','img-9')" />
+                            <img id="img-play-9" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Đường Về Hai Thôn" onload="anKhiChay1('img-play-9')" onmouseover="hienPlay('img-play-9','img-9')" onmouseout="anPlay('img-play-9','img-9')" />
+                            <a href="#">Đường Về Hai Thôn</a>
+                            <p>Khánh Bình, Ánh Linh</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-10" class="img" src="../../IMAGES/img-129.jpg" width="217px" height="150px" title="Không Bao Giờ Quên Anh" onmouseover="hienPlay('img-play-10','img-10')" onmouseout="anPlay('img-play-10','img-10')" />
+                            <img id="img-play-10" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Không Bao Giờ Quên Anh" onload="anKhiChay1('img-play-10')" onmouseover="hienPlay('img-play-10','img-10')" onmouseout="anPlay('img-play-10','img-10')" />
+                            <a href="#">Không Bao Giờ Quên Anh</a>
+                            <p>Trang Hương</p>
+                        </td>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-11" class="img" src="../../IMAGES/img-130.jpg" width="217px" height="150px" title="Đón Xuân Này Nhớ Xuân Xưa" onmouseover="hienPlay('img-play-11','img-11')" onmouseout="anPlay('img-play-11','img-11')" />
+                            <img id="img-play-11" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Đón Xuân Này Nhớ Xuân Xưa" onload="anKhiChay1('img-play-11')" onmouseover="hienPlay('img-play-11','img-11')" onmouseout="anPlay('img-play-11','img-11')" />
+                            <a href="#">Đón Xuân Này Nhớ Xuân Xưa</a>
+                            <p>Hoàng Ngọc Sang</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-12" class="img" src="../../IMAGES/img-131.jpg" width="217px" height="150px" title="Nhớ Em" onmouseover="hienPlay('img-play-12','img-12')" onmouseout="anPlay('img-play-12','img-12')" />
+                            <img id="img-play-12" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Nhớ Em" onload="anKhiChay1('img-play-12')" onmouseover="hienPlay('img-play-12','img-12')" onmouseout="anPlay('img-play-12','img-12')" />
+                            <a href="#">Nhớ Em</a>
+                            <p>Huỳnh Nguyễn Công Bằng</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-13" class="img" src="../../IMAGES/img-132.jpg" width="217px" height="150px" title="Nhớ Người Yêu" onmouseover="hienPlay('img-play-13','img-13')" onmouseout="anPlay('img-play-13','img-13')" />
+                            <img id="img-play-13" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Nhớ Người Yêu" onload="anKhiChay1('img-play-13')" onmouseover="hienPlay('img-play-13','img-13')" onmouseout="anPlay('img-play-13','img-13')" />
+                            <a href="#">Nhớ Người Yêu</a>
+                            <p>Quang Lê, Lệ Quyên</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-14" class="img" src="../../IMAGES/img-133.jpg" width="217px" height="150px" title="Đừng Nhắc Chuyện Lòng" onmouseover="hienPlay('img-play-14','img-14')" onmouseout="anPlay('img-play-14','img-14')" />
+                            <img id="img-play-14" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Đừng Nhắc Chuyện Lòng" onload="anKhiChay1('img-play-14')" onmouseover="hienPlay('img-play-14','img-14')" onmouseout="anPlay('img-play-14','img-14')" />
+                            <a href="#">Đừng Nhắc Chuyện Lòng</a>
+                            <p>Khưu Huy Vũ</p>
+                        <td align="center">
+                            <img id="img-15" class="img" src="../../IMAGES/img-134.jpg" width="217px" height="150px" title="Đừng Nói Xa Nhau" onmouseover="hienPlay('img-play-15','img-15')" onmouseout="anPlay('img-play-15','img-15')" />
+                            <img id="img-play-15" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Đừng Nói Xa Nhau" onload="anKhiChay1('img-play-15')" onmouseover="hienPlay('img-play-15','img-15')" onmouseout="anPlay('img-play-15','img-15')" />
+                            <a href="#">Đừng Nói Xa Nhau</a>
+                            <p>Quang Lê, Minh Tuyết</p>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-16" class="img" src="../../IMAGES/img-135.jpg" width="217px" height="150px" title="Giọt Lệ Đài Trang" onmouseover="hienPlay('img-play-16','img-16')" onmouseout="anPlay('img-play-16','img-16')" />
+                            <img id="img-play-16" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Giọt Lệ Đài Trang" onload="anKhiChay1('img-play-16')" onmouseover="hienPlay('img-play-16','img-16')" onmouseout="anPlay('img-play-16','img-16')" />
+                            <a href="#">Giọt Lệ Đài Trang</a>
+                            <p>Lâm Khánh Chi</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-17" class="img" src="../../IMAGES/img-136.jpg" width="217px" height="150px" title="Hãy Đến Với Em" onmouseover="hienPlay('img-play-17','img-17')" onmouseout="anPlay('img-play-17','img-17')" />
+                            <img id="img-play-17" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Hãy Đến Với Em" onload="anKhiChay1('img-play-17')" onmouseover="hienPlay('img-play-17','img-17')" onmouseout="anPlay('img-play-17','img-17')" />
+                            <a href="#">Hãy Đến Với Em</a>
+                            <p>Cẩm Như</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-18" class="img" src="../../IMAGES/img-137.jpg" width="217px" height="150px" title="Trả Nợ Người Ta" onmouseover="hienPlay('img-play-18','img-18')" onmouseout="anPlay('img-play-18','img-18')" />
+                            <img id="img-play-18" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Trả Nợ Người Ta" onload="anKhiChay1('img-play-18')" onmouseover="hienPlay('img-play-18','img-18')" onmouseout="anPlay('img-play-18','img-18')" />
+                            <a href="#">Trả Nợ Người Ta</a>
+                            <p>Dương Nguyễn Tâm</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-19" class="img" src="../../IMAGES/img-138.jpg" width="217px" height="150px" title="Chuyện Tình Không Dĩ Vãng" onmouseover="hienPlay('img-play-19','img-19')" onmouseout="anPlay('img-play-19','img-19')" />
+                            <img id="img-play-19" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Chuyện Tình Không Dĩ Vãng" onload="anKhiChay1('img-play-19')" onmouseover="hienPlay('img-play-19','img-19')" onmouseout="anPlay('img-play-19','img-19')" />
+                            <a href="#">Chuyện Tình Không Dĩ Vãng</a>
+                            <p>Thu Trang</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-20" class="img" src="../../IMAGES/img-139.jpg" width="217px" height="150px" title="Thương Lắm Miền Tây" onmouseover="hienPlay('img-play-20','img-20')" onmouseout="anPlay('img-play-20','img-20')" />
+                            <img id="img-play-20" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Thương Lắm Miền Tây" onload="anKhiChay1('img-play-20')" onmouseover="hienPlay('img-play-20','img-20')" onmouseout="anPlay('img-play-20','img-20')" />
+                            <a href="#">Thương Lắm Miền Tây</a>
+                            <p>Trang Anh Thơ</p>
+                        </td>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-21" class="img" src="../../IMAGES/img-140.jpg" width="217px" height="150px" title="Một Mùa Xuân Nho Nhỏ" onmouseover="hienPlay('img-play-21','img-21')" onmouseout="anPlay('img-play-21','img-21')" />
+                            <img id="img-play-21" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Một Mùa Xuân Nho Nhỏ" onload="anKhiChay1('img-play-21')" onmouseover="hienPlay('img-play-21','img-21')" onmouseout="anPlay('img-play-21','img-21')" />
+                            <a href="#">Một Mùa Xuân Nho Nhỏ</a>
+                            <p>Phương Gia Linh</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-22" class="img" src="../../IMAGES/img-141.jpg" width="217px" height="150px" title="Mùa Xuân Cưới Em" onmouseover="hienPlay('img-play-22','img-22')" onmouseout="anPlay('img-play-22','img-22')" />
+                            <img id="img-play-22" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Mùa Xuân Cưới Em" onload="anKhiChay1('img-play-22')" onmouseover="hienPlay('img-play-22','img-22')" onmouseout="anPlay('img-play-22','img-22')" />
+                            <a href="#">Mùa Xuân Cưới Em</a>
+                            <p>Trường Sơn, Giáng Tiên</p>
+                        <td align="center">
+                            <img id="img-23" class="img" src="../../IMAGES/img-142.jpg" width="217px" height="150px" title="Đoản Xuân Ca" onmouseover="hienPlay('img-play-23','img-23')" onmouseout="anPlay('img-play-23','img-23')" />
+                            <img id="img-play-23" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Đoản Xuân Ca" onload="anKhiChay1('img-play-23')" onmouseover="hienPlay('img-play-23','img-23')" onmouseout="anPlay('img-play-23','img-23')" />
+                            <a href="#">Đoản Xuân Ca</a>
+                            <p>Hà Vân</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-24" class="img" src="../../IMAGES/img-143.jpg" width="217px" height="150px" title="Yêu Một Mình" onmouseover="hienPlay('img-play-24','img-24')" onmouseout="anPlay('img-play-24','img-24')" />
+                            <img id="img-play-24" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Yêu Một Mình" onload="anKhiChay1('img-play-24')" onmouseover="hienPlay('img-play-24','img-24')" onmouseout="anPlay('img-play-24','img-24')" />
+                            <a href="#">Yêu Một Mình</a>
+                            <p>Khưu Huy Vũ</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-25" class="img" src="../../IMAGES/img-144.jpg" width="217px" height="150px" title="Kiên Giang Mình Đẹp Lắm" onmouseover="hienPlay('img-play-25','img-25')" onmouseout="anPlay('img-play-25','img-25')" />
+                            <img id="img-play-25" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Kiên Giang Mình Đẹp Lắm" onload="anKhiChay1('img-play-25')" onmouseover="hienPlay('img-play-25','img-25')" onmouseout="anPlay('img-play-25','img-25')" />
+                            <a href="#">Kiên Giang Mình Đẹp Lắm</a>
+                            <p>Trang Anh Thơ</p>
+                        </td>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-26" class="img" src="../../IMAGES/img-145.jpg" width="217px" height="150px" title="Bài Ca Kỷ Niệm" onmouseover="hienPlay('img-play-26','img-26')" onmouseout="anPlay('img-play-26','img-26')" />
+                            <img id="img-play-26" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Bài Ca Kỷ Niệm" onload="anKhiChay1('img-play-26')" onmouseover="hienPlay('img-play-26','img-26')" onmouseout="anPlay('img-play-26','img-26')" />
+                            <a href="#">Bài Ca Kỷ Niệm</a>
+                            <p>Lưu Ánh Loan</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-27" class="img" src="../../IMAGES/img-146.jpg" width="217px" height="150px" title="Đừng Nói Xa Nhau" onmouseover="hienPlay('img-play-27','img-27')" onmouseout="anPlay('img-play-27','img-27')" />
+                            <img id="img-play-27" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Đừng Nói Xa Nhau" onload="anKhiChay1('img-play-27')" onmouseover="hienPlay('img-play-27','img-27')" onmouseout="anPlay('img-play-27','img-27')" />
+                            <a href="#">Đừng Nói Xa Nhau</a>
+                            <p>Khưu Huy Vũ</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-28" class="img" src="../../IMAGES/img-147.jpg" width="217px" height="150px" title="Chuyện Tình Không Dĩ Vãng" onmouseover="hienPlay('img-play-28','img-28')" onmouseout="anPlay('img-play-28','img-28')" />
+                            <img id="img-play-28" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Chuyện Tình Không Dĩ Vãng" onload="anKhiChay1('img-play-28')" onmouseover="hienPlay('img-play-28','img-28')" onmouseout="anPlay('img-play-28','img-28')" />
+                            <a href="#">Chuyện Tình Không Dĩ Vãng</a>
+                            <p>Uyên Trang</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-29" class="img" src="../../IMAGES/img-148.jpg" width="217px" height="150px" title="Cánh Thiệp Đầu Xuân" onmouseover="hienPlay('img-play-29','img-29')" onmouseout="anPlay('img-play-29','img-29')" />
+                            <img id="img-play-29" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Cánh Thiệp Đầu Xuân" onload="anKhiChay1('img-play-29')" onmouseover="hienPlay('img-play-29','img-29')" onmouseout="anPlay('img-play-29','img-29')" />
+                            <a href="#">Cánh Thiệp Đầu Xuân</a>
+                            <p>Mỹ Hạnh</p>
+                        </td>
+                        <td align="center">
+                            <img id="img-30" class="img" src="../../IMAGES/img-149.jpg" width="217px" height="150px" title="Phận Đời Công Nhân" onmouseover="hienPlay('img-play-30','img-30')" onmouseout="anPlay('img-play-30','img-30')" />
+                            <img id="img-play-30" src="../../IMAGES/play-icon.png" width="48px" height="48px" title="Phận Đời Công Nhân" onload="anKhiChay1('img-play-30')" onmouseover="hienPlay('img-play-30','img-30')" onmouseout="anPlay('img-play-30','img-30')" />
+                            <a href="#">Phận Đời Công Nhân</a>
+                            <p>Hoàng Châu</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="color:white;background-color:rebeccapurple" id="frmFooter">
+                <table align="center" cellpadding="5px">
+                    <tr>
+                        <td>
+                            <img src="../../IMAGES/zing-mp3-icon.png" width="50px" height="50px" />
+                        </td>
+                        <td>
+                            <h4>Hãy đăng nhập để khám phá thêm nhiều bài hát dành riêng cho bạn</h4>
+                        </td>
+                        <td>
+                            <form>
+                                <div class="form-group">
+                                    <input type="button" class="form-control" value="Đăng nhập" style="color:dimgray;background-color:gold;margin-top:10px" data-toggle="modal" data-target="#myModalDN" />
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12" style="color:white;background-color:darkcyan">
+                <table align="center" cellpadding="5px" width="100%" id="tblFooter">
+                    <tr>
+                        <td colspan="2" width="50%">
+                            <strong>HỖ TRỢ</strong>
+                        </td>
+                        <td colspan="2" width="50%">
+                            <strong>SẢN PHẨM KHÁC</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Trợ giúp </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Chính sách bảo mật </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Mobile App </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Dịch vụ 3G </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Sơ Đồ </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Chính sách SHIT </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Mobile Web </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; ZingMP3 Corp </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; NCCI </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Thỏa thuận sử dụng </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; SmartTV </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Tuyển dụng </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Đăng nhập-->
+    <div class="modal" id="myModalDN">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">THÔNG TIN ĐĂNG NHẬP</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="emailDN">Địa chỉ email:</label>
+                            <input type="email" class="form-control" id="emailDN" placeholder="Tên đăng nhập" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwdDN">Password:</label>
+                            <input type="password" class="form-control" id="pwdDN" placeholder="Mật khẩu" required="required">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Đăng nhập</button>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="btnDangKy" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#myModalDK">
+                        Đăng ký
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Đăng ký-->
+    <div class="modal" id="myModalDK">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">THÔNG TIN ĐĂNG KÝ</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="hoTen">Họ và tên:</label>
+                            <input type="text" class="form-control" id="txtHoTen">
+                            <span id="erTen">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="ngaySinh">Ngày sinh:</label>
+                            <input type="date" class="form-control" id="txtNgaySinh">
+                            <span id="erNS">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Số điện thoại:</label>
+                            <input type="tel" class="form-control" id="txtSDT">
+                            <span id="erSDT">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="diaChi">Địa chỉ:</label>
+                            <input type="text" class="form-control" id="txtDiaChi">
+                            <span id="erDC">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailDK">Địa chỉ email:</label>
+                            <input type="email" class="form-control" id="emailDK">
+                            <span id="erEmail">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwdDK">Password:</label>
+                            <input type="password" class="form-control" id="pwdDK">
+                            <span id="erpwd">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cfpwdDK">Confirm password:</label>
+                            <input type="password" class="form-control" id="cfpwdDK">
+                            <span id="ercfpwd">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="anh">Ảnh Đại Diện:</label>
+                            <input type="file" class="form-control" id="txtanh">
+                            <span id="erAnh">(*)</span>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button id="btnDK" type="button" class="btn btn-success btn-block">Đăng ký</button>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Plugin Chạy Nhạc-->
+    <span id="chayNhac"></span>
+</body>
+</html>

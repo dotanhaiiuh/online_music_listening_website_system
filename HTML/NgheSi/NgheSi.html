@@ -1,0 +1,672 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Zing MP3 - Nghe tải nhạc chất lượng cao trên desktop, mobile và TV</title>
+    <link rel="shortcut icon" type="image/png" href="../../IMAGES/zing-mp3-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../../BOOTSTRAP/3/css/bootstrap.css">
+    <!-- jQuery JS-->
+    <script src="../../JQUERY/4/jquery.min.js"></script>
+    <script src="../../JQUERY/4/popper.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script type="text/javascript" src="../../BOOTSTRAP/3/js/bootstrap.min.js"></script>
+    <style>
+        @import url("../../CSS/LayoutTrangChu.css");
+        @import url("../../CSS/DropDownHover.css");
+    </style>
+    <script src="../../JAVASCRIPT/Validata.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="col-md-12">
+                <tr>
+                    <td>
+                        <img src="../../IMAGES/zing-mp3-logo.png" width="250px" height="70px" />
+                    </td>
+                    <td>
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="image" src="../../IMAGES/search-icon.jpg" width="70px" height="70px" />
+                                    </td>
+                                    <td>
+                                        <input id="txtSearch" type="text" class="form-control" style="border: 1px solid black" size="55" placeholder="Nhập tên bài hát, ca sĩ hoặc video…" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                    <td>
+                        <table width="190px">
+                            <tr>
+                                <td>
+                                    <img id="icon-login" src="../../IMAGES/login-user-icon.png" width="50px" height="50px" />
+                                </td>
+                                <td>
+                                    <button id="btnDangNhap" type="button" class="btn btn-link" data-toggle="modal" data-target="#myModalDN">Đăng nhập</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="row" id="nav">
+            <div class="col-md-12">
+                <nav class="nav navbar-default">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li><a href="../TrangChu/index.html">TRANG CHỦ</a></li>
+                        <li class="dropdown">
+                            <a href="../ZINGCHART/ZINGCHART.html">#ZINGCHART</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>#ZINGCHART</strong></a></td>
+                                        <td><a href="#"><strong>TUẦN</strong></a></td>
+                                        <td><a href="#"><strong>US-UK CHART</strong></a></td>
+                                        <td><a href="#"><strong>KPOP CHART</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Bài Hát</a></td>
+                                        <td><a href="#">Bài Hát</a></td>
+                                        <td><a href="#">Bài Hát</a></td>
+                                        <td><a href="#">Bài Hát</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">MV</a></td>
+                                        <td><a href="#">MV</a></td>
+                                        <td><a href="#">MV</a></td>
+                                        <td><a href="#">MV</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../TOP100/Top100.html">TOP 100</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>VIỆT NAM</strong></a></td>
+                                        <td><a href="#"><strong>ÂU MỸ</strong></a></td>
+                                        <td><a href="#"><strong>CHÂU Á</strong></a></td>
+                                        <td><a href="#"><strong>HÒA TẤU</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trẻ</a></td>
+                                        <td><a href="#">POP</a></td>
+                                        <td><a href="#">Hàn Quốc</a></td>
+                                        <td><a href="#">Classical</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trữ Tình</a></td>
+                                        <td><a href="#">Rock</a></td>
+                                        <td><a href="#">Nhật Bản</a></td>
+                                        <td><a href="#">Piano</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Piano</a></td>
+                                        <td><a href="#">Rap / Hip Hop</a></td>
+                                        <td><a href="#">Hoa Ngữ</a></td>
+                                        <td><a href="#">Guitar</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Cách Mạng</a></td>
+                                        <td><a href="#">Country</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Violin</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rap / Hip Hop Việt</a></td>
+                                        <td><a href="#">Electronic / Dance</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Cello</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rock Việt</a></td>
+                                        <td><a href="#">R&B / Soul</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Saxophone</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Dance Việt</a></td>
+                                        <td><a href="#">Audiophile</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Nhạc Cụ Khác</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../ChuDe/ChuDe.html">CHỦ ĐỀ</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>ĐỀ XUẤT</strong></a></td>
+                                        <td><a href="#"><strong>THỂ LOẠI</strong></a></td>
+                                        <td><a href="#"><strong>TÂM TRẠNG</strong></a></td>
+                                        <td><a href="#"><strong>HOẠT ĐỘNG</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Hot</a></td>
+                                        <td><a href="#">EDM</a></td>
+                                        <td><a href="#">Những Ngày Mưa</a></td>
+                                        <td><a href="#">Làm Việc</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Những Bài HITs..</a></td>
+                                        <td><a href="#">Acoustic</a></td>
+                                        <td><a href="#">Tình Yêu</a></td>
+                                        <td><a href="#">Yoga</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Việt Bất Hũ</a></td>
+                                        <td><a href="#">Indie</a></td>
+                                        <td><a href="#">Buồn</a></td>
+                                        <td><a href="#">Cà Phê</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Bất Hũ Âu ..</a></td>
+                                        <td><a href="#">Nhạc Không Lời</a></td>
+                                        <td><a href="#">Thư Giãn</a></td>
+                                        <td><a href="#">Cuối Tuần</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">K-POP HITs</a></td>
+                                        <td><a href="../ChuDe/TruTinhBolero.html">Trữ Tình & Bolero</a></td>
+                                        <td><a href="#">Động Lực</a></td>
+                                        <td><a href="#">Tiệc Tùng</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="../ChuDe/NhacThuyNga.html">Nhạc Thúy Nga</a></td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Du Lịch</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../VIDEO/Video.html">VIDEO</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>VIỆT NAM</strong></a></td>
+                                        <td><a href="#"><strong>ÂU MỸ</strong></a></td>
+                                        <td><a href="#"><strong>CHÂU Á</strong></a></td>
+                                        <td><a href="#"><strong>HÒA TẤU</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trẻ</a></td>
+                                        <td><a href="#">POP</a></td>
+                                        <td><a href="#">Hàn Quốc</a></td>
+                                        <td><a href="#">Classical</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="../VIDEO/NhacTruTinh.html">Nhạc Trữ Tình</a></td>
+                                        <td><a href="#">Rock</a></td>
+                                        <td><a href="#">Nhật Bản</a></td>
+                                        <td><a href="#">Piano</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Dance Việt</a></td>
+                                        <td><a href="#">Rap / Hip Hop</a></td>
+                                        <td><a href="#">Hoa Ngữ</a></td>
+                                        <td><a href="#">Guitar</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rock Việt</a></td>
+                                        <td><a href="#">Country</a></td>
+                                        <td><a href="#">Thái Lan</a></td>
+                                        <td><a href="#">Violin</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rap / Hip Hop Việt</a></td>
+                                        <td><a href="#">Eletronic / Dance</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Cello</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trịnh</a></td>
+                                        <td><a href="#">R&B / Soul</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Saxophone</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Thiếu Nhi</a></td>
+                                        <td><a href="#">Audiophile</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Nhạc Cụ Dân Tộc</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="../Album/Album.html">ALBUM</a>
+                            <div class="dropdown-content" style="width:700px">
+                                <table cellspacing="0">
+                                    <tr>
+                                        <td><a href="#"><strong>VIỆT NAM</strong></a></td>
+                                        <td><a href="#"><strong>ÂU MỸ</strong></a></td>
+                                        <td><a href="#"><strong>CHÂU Á</strong></a></td>
+                                        <td><a href="#"><strong>HÒA TẤU</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trẻ</a></td>
+                                        <td><a href="#">POP</a></td>
+                                        <td><a href="#">Hàn Quốc</a></td>
+                                        <td><a href="#">Classical</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="../Album/NhacTruTinh.html">Nhạc Trữ Tình</a></td>
+                                        <td><a href="#">Rock</a></td>
+                                        <td><a href="#">Nhật Bản</a></td>
+                                        <td><a href="#">Piano</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Dance Việt</a></td>
+                                        <td><a href="#">Rap / Hip Hop</a></td>
+                                        <td><a href="#">Hoa Ngữ</a></td>
+                                        <td><a href="#">Guitar</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rock Việt</a></td>
+                                        <td><a href="#">Country</a></td>
+                                        <td><a href="#">Thái Lan</a></td>
+                                        <td><a href="#">Violin</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Rap / Hip Hop Việt</a></td>
+                                        <td><a href="#">Eletronic / Dance</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Cello</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Trịnh</a></td>
+                                        <td><a href="#">R&B / Soul</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Saxophone</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">Nhạc Thiếu Nhi</a></td>
+                                        <td><a href="#">Audiophile</a></td>
+                                        <td>&nbsp;</td>
+                                        <td><a href="#">Nhạc Cụ Dân Tộc</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" style="border-bottom:3px solid purple;">NGHỆ SĨ</a>
+                            <div class="dropdown-content" style="width:120px;font-weight:normal;line-height:40px;">
+                                <a href="#" style="padding:15px;">Việt Nam</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Âu Mỹ</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Hàn Quốc</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Nhật Bản</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Hoa Ngữ</a>
+                                <br />
+                                <a href="#" style="padding:15px;">Hòa Tấu</a>
+                            </div>
+                        </li>
+                        <li><a href="../NhacCaNhan/NhacCaNhan.html">NHẠC CÁ NHÂN</a></li>
+                        <li><a href="#">VIP</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-info"><a href="#" style="text-decoration:none">VIỆT NAM &gt;</a></h3>
+                <table width="100%" cellpadding="25px">
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-1" class="img" src="../../IMAGES/giang-tien.jpg" width="217px" height="217px" style="border-radius:217px" title="Giáng Tiên" />
+                            <a href="#">Giáng Tiên</a>
+                            <p>23k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-2" class="img" src="../../IMAGES/ha-van.jpg" width="217px" height="217px" style="border-radius:217px" title="Hà Vân" />
+                            <a href="#">Hà Vân</a>
+                            <p>17k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-3" class="img" src="../../IMAGES/huong-tram.jpg" width="217px" height="217px" style="border-radius:217px" title="Hương Tràm" />
+                            <a href="#">Hương Tràm</a>
+                            <p>42k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-4" class="img" src="../../IMAGES/luu-anh-loan.jpg" width="217px" height="217px" style="border-radius:217px" title="Lưu Ánh Loan" />
+                            <a href="#">Lưu Ánh Loan</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-5" class="img" src="../../IMAGES/luong-bich-huu.jpg" width="217px" height="217px" style="border-radius:217px" title="Lương Bích Hữu" />
+                            <a href="#">Lương Bích Hữu</a>
+                            <p>57k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-6" class="img" src="../../IMAGES/duong-hong-loan-1.jpg" width="217px" height="217px" style="border-radius:217px" title="Dương Hồng Loan" />
+                            <a href="#">Dương Hồng Loan</a>
+                            <p>27k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-7" class="img" src="../../IMAGES/dan-truong.jpg" width="217px" height="217px" style="border-radius:217px" title="Đan Trường" />
+                            <a href="#">Đan Trường</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-8" class="img" src="../../IMAGES/nhat-tinh-anh.jpg" width="217px" height="217px" style="border-radius:217px" title="Nhật Tinh Anh" />
+                            <a href="#">Nhật Tinh Anh</a>
+                            <p>22k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                    </tr>
+                </table>
+                <h3 class="text-info"><a href="#" style="text-decoration:none">HẢI NGOẠI &gt;</a></h3>
+                <table width="100%" cellpadding="25px">
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-9" class="img" src="../../IMAGES/nhu-quynh-9.jpg" width="217px" height="217px" style="border-radius:217px" title="Như Quỳnh" />
+                            <a href="#">Như Quỳnh</a>
+                            <p>120k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-10" class="img" src="../../IMAGES/tam-doan.jpg" width="217px" height="217px" style="border-radius:217px" title="Tâm Đoan" />
+                            <a href="#">Tâm Đoan</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-11" class="img" src="../../IMAGES/phi-nhung.jpg" width="217px" height="217px" style="border-radius:217px" title="Phi Nhung" />
+                            <a href="#">Phi Nhung</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-12" class="img" src="../../IMAGES/huong-thuy.jpg" width="217px" height="217px" style="border-radius:217px" title="Hương Thủy" />
+                            <a href="#">Hương Thủy</a>
+                            <p>22k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-13" class="img" src="../../IMAGES/quang-le.jpg" width="217px" height="217px" style="border-radius:217px" title="Quang Lê" />
+                            <a href="#">Quang Lê</a>
+                            <p>72k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-14" class="img" src="../../IMAGES/truong-vu.jpg" width="217px" height="217px" style="border-radius:217px" title="Trường Vũ" />
+                            <a href="#">Trường Vũ</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-15" class="img" src="../../IMAGES/ho-viet-trung.jpg" width="217px" height="217px" style="border-radius:217px" title="Hồ Việt Trung" />
+                            <a href="#">Hồ Việt Trung</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-16" class="img" src="../../IMAGES/manh-quynh.jpg" width="217px" height="217px" style="border-radius:217px" title="Mạnh Quỳnh" />
+                            <a href="#">Mạnh Quỳnh</a>
+                            <p>35k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                    </tr>
+                </table>
+                <h3 class="text-info"><a href="#" style="text-decoration:none">NỔI BẬT &gt;</a></h3>
+                <table width="100%" cellpadding="25px">
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-17" class="img" src="../../IMAGES/img-40.jpg" width="217px" height="217px" style="border-radius:217px" title="Mai Thiên Vân" />
+                            <a href="#">Mai Thiên Vân</a>
+                            <p>22k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-18" class="img" src="../../IMAGES/img-42.jpg" width="217px" height="217px" style="border-radius:217px" title="Đan Nguyên" />
+                            <a href="#">Đan Nguyên</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-19" class="img" src="../../IMAGES/img-101.jpg" width="217px" height="217px" style="border-radius:217px" title="Lệ Quyên" />
+                            <a href="#">Lệ Quyên</a>
+                            <p>42k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-20" class="img" src="../../IMAGES/phuong-anh.jpg" width="217px" height="217px" style="border-radius:217px" title="Phương Anh" />
+                            <a href="#">Phương Anh</a>
+                            <p>12k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                    </tr>
+                    <tr style="font-size:16px">
+                        <td align="center">
+                            <img id="img-21" class="img" src="../../IMAGES/truc-chi.jpg" width="217px" height="217px" style="border-radius:217px" title="Trúc Chi" />
+                            <a href="#">Trúc Chi</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-22" class="img" src="../../IMAGES/y-linh.jpg" width="217px" height="217px" style="border-radius:217px" title="Ý Linh" />
+                            <a href="#">Ý Linh</a>
+                            <p>12k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-23" class="img" src="../../IMAGES/cam-loan.jpg" width="217px" height="217px" style="border-radius:217px" title="Cẩm Loan" />
+                            <a href="#">Cẩm Loan</a>
+                            <p>22k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                        <td align="center">
+                            <img id="img-24" class="img" src="../../IMAGES/miu-le.jpg" width="217px" height="217px" style="border-radius:217px" title="Miu Lê" />
+                            <a href="#">Miu Lê</a>
+                            <p>32k quan tâm</p>
+                            <button type="button" class="btn btn-default">&hearts; Quan tâm</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="color:white;background-color:rebeccapurple" id="frmFooter">
+                <table align="center" cellpadding="5px">
+                    <tr>
+                        <td>
+                            <img src="../../IMAGES/zing-mp3-icon.png" width="50px" height="50px" />
+                        </td>
+                        <td>
+                            <h4>Hãy đăng nhập để khám phá thêm nhiều bài hát dành riêng cho bạn</h4>
+                        </td>
+                        <td>
+                            <form>
+                                <div class="form-group">
+                                    <input type="button" class="form-control" value="Đăng nhập" style="color:dimgray;background-color:gold;margin-top:10px" data-toggle="modal" data-target="#myModalDN" />
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12" style="color:white;background-color:darkcyan">
+                <table align="center" cellpadding="5px" width="100%" id="tblFooter">
+                    <tr>
+                        <td colspan="2" width="50%">
+                            <strong>HỖ TRỢ</strong>
+                        </td>
+                        <td colspan="2" width="50%">
+                            <strong>SẢN PHẨM KHÁC</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Trợ giúp </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Chính sách bảo mật </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Mobile App </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Dịch vụ 3G </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Sơ Đồ </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Chính sách SHIT </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Mobile Web </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; ZingMP3 Corp </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; NCCI </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Thỏa thuận sử dụng </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; SmartTV </a>
+                        </td>
+                        <td width="25%">
+                            <a href="#" style="text-decoration:none;color:white">&gt; Tuyển dụng </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Đăng nhập-->
+    <div class="modal" id="myModalDN">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">THÔNG TIN ĐĂNG NHẬP</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="emailDN">Địa chỉ email:</label>
+                            <input type="email" class="form-control" id="emailDN" placeholder="Tên đăng nhập" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwdDN">Password:</label>
+                            <input type="password" class="form-control" id="pwdDN" placeholder="Mật khẩu" required="required">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Đăng nhập</button>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="btnDangKy" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#myModalDK">
+                        Đăng ký
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Đăng ký-->
+    <div class="modal" id="myModalDK">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">THÔNG TIN ĐĂNG KÝ</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="hoTen">Họ và tên:</label>
+                            <input type="text" class="form-control" id="txtHoTen">
+                            <span id="erTen">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="ngaySinh">Ngày sinh:</label>
+                            <input type="date" class="form-control" id="txtNgaySinh">
+                            <span id="erNS">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Số điện thoại:</label>
+                            <input type="tel" class="form-control" id="txtSDT">
+                            <span id="erSDT">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="diaChi">Địa chỉ:</label>
+                            <input type="text" class="form-control" id="txtDiaChi">
+                            <span id="erDC">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailDK">Địa chỉ email:</label>
+                            <input type="email" class="form-control" id="emailDK">
+                            <span id="erEmail">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwdDK">Password:</label>
+                            <input type="password" class="form-control" id="pwdDK">
+                            <span id="erpwd">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cfpwdDK">Confirm password:</label>
+                            <input type="password" class="form-control" id="cfpwdDK">
+                            <span id="ercfpwd">(*)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="anh">Ảnh Đại Diện:</label>
+                            <input type="file" class="form-control" id="txtanh">
+                            <span id="erAnh">(*)</span>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button id="btnDK" type="button" class="btn btn-success btn-block">Đăng ký</button>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Plugin Chạy Nhạc-->
+    <span id="chayNhac"></span>
+</body>
+</html>
